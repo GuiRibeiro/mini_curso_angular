@@ -6,7 +6,11 @@ body{
 .search-form .form-group {
   float: right !important;
   transition: all 0.35s, border-radius 0s;
+<<<<<<< HEAD
   width: 80px;
+=======
+  width: 32px;
+>>>>>>> 3ab767b39d8f790eb4e46bd762c24db8450f42a0
   height: 32px;
   background-color: #fff;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;

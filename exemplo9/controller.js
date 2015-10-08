@@ -50,4 +50,8 @@ function filtroMonetario () {
 	   	
 	   	return 'R$ ' + ret;
 	}
+<<<<<<< HEAD
 } 
+=======
+}
+>>>>>>> 3ab767b39d8f790eb4e46bd762c24db8450f42a0
