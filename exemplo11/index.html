@@ -1,0 +1,88 @@
+    <!DOCTYPE html>
+    <html lang="pt-BR" ng-app="exemplo5">
+    <head>
+    	<meta charset="UTF-8">
+    	<title>Mini Curso SATI - UTFPR 2015</title>
+    	<link rel="stylesheet" href="../css/bootstrap.min.css">
+    	<link rel="stylesheet" href="../css/style.css">
+          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    	<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+      <script src="../js/angular.js"></script>
+    	<script src="../js/angular-route.js"></script>
+    	<script src="controller.js"></script>
+
+    </head>
+    <body>
+    	<div class="container" ng-controller="pessoasController as pessoasCtrl">
+    		<h3>Introdução</h3>
+                <h1 class="cover-heading">ANGULARJS</h1>
+                <p class="lead">para marujos de primeira viagem.</p>
+                <hr>
+                <div class="panel panel-default">
+                  <div class="panel-heading"><i class="fa fa-2x fa-user-plus "></i>&nbspNovo Cliente</div>
+                  <div class="panel-body">
+                   <div  class="col-md-12">
+                       <form class="form-horizontal" ng-submit="adicionarCliente()">
+                       <fieldset>
+
+                       <!-- Form Name -->
+                       <legend></legend>
+
+                       <!-- Text input-->
+                       <div class="form-group row">
+                         <label class="col-md-2 control-label" for="textinput">Nome:</label>  
+                         <div class="col-md-4">
+                         <input id="textinput" ng-model="novo.nome" name="textinput" placeholder="Nome" class="form-control input-md" type="text">
+                           
+                         </div>
+                         <label class="col-md-2 control-label" for="email">E-mail:</label>  
+                         <div class="col-md-4">
+                         <input id="email" name="email" ng-model="novo.email" placeholder="E-mail" class="form-control input-md" type="text">
+                           
+                         </div>
+                       </div>
+
+                       <!-- Text input-->
+                       <div class="form-group row">
+                         <label class="col-md-2 control-label" for="dataNascimento">Data de Nascimento:</label>  
+                         <div class="col-md-4">
+                         <input id="dataNascimento" ng-model="novo.dataNascimento" name="dataNascimento" placeholder="__/__/____" class="form-control input-md" type="text">
+                           
+                         </div>
+                         <label class="col-md-2 control-label" for="saldo">Saldo:</label>  
+                         <div class="col-md-4">
+                         <input id="saldo" name="saldo" ng-model="novo.saldo" placeholder="0,00" class="form-control input-md" type="text">
+                           
+                         </div>
+                       </div>
+
+                       <!-- Text input-->
+                       <div class="form-group row">
+                         <label class="col-md-2 control-label" for="foto">Foto:</label>  
+                         <div class="col-md-4">
+                         <input id="foto" name="foto" ng-model="novo.foto" placeholder="Path Imagemm" class="form-control input-md" type="text"> 
+                         </div>
+                       </div>
+
+                       <!-- Button -->
+                       <div class="form-group row">
+                         <label class="col-md-5 control-label" for="singlebutton"></label>
+                         <div class="col-md-4">
+                           <button type="submit" id="singlebutton" name="singlebutton" class="btn btn-primary"><i class="fa fa-floppy-o"></i> &nbspGravar</button>
+                         </div>
+                       </div>
+
+                       </fieldset>
+                       </form>
+                       </div>
+                  </div>
+                </div>
+        <div ng-show="pessoasCtrl.rel == true"  ng-view class="">
+          
+        </div>
+        
+        
+          
+    	</div>
+    </body>
+    </html>

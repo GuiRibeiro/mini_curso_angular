@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR" ng-app="exemplo5">
+<head>
+	<meta charset="UTF-8">
+	<title>Mini Curso SATI - UTFPR 2015</title>
+	<link rel="stylesheet" href="../css/bootstrap.min.css">
+	<link rel="stylesheet" href="../css/style.css">
+	<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+	<script src="../js/angular.js"></script>
+	<script src="controller.js"></script>
+
+</head>
+<body>
+	<div class="container" ng-controller="pessoasController">
+		<h3>Introdução</h3>
+            <h1 class="cover-heading">ANGULARJS</h1>
+            <p class="lead">para marujos de primeira viagem.</p>
+            <hr>
+       <table class="col-md-12 table table-striped" >
+       <fieldset>Lista Clientes</fieldset>
+       	<thead>
+       		<th>#</th>
+       		<th>Nome</th>
+       		<th>Email</th>
+       		<th>Aniversário</th>
+       		<th>Saldo</th>
+       	</thead>
+       	<tbody>
+       		<tr ng-repeat="pessoa in pessoas">
+       			<td style="vertical-align: middle;"><img src="{{ pessoa.foto }}" alt="{{ pessoa.nome }}" class="img-circle"></td>
+       			<td style="vertical-align: middle;">{{ pessoa.nome }}</td>
+       			<td style="vertical-align: middle;">{{ pessoa.email }}</td>
+       			<td style="vertical-align: middle;">{{ pessoa.dataNascimento }}</td>
+       			<td style="vertical-align: middle;">{{ pessoa.saldo }}</td>
+       		</tr>
+       	</tbody>
+       </table>
+
+	</div>
+</body>
+</html>

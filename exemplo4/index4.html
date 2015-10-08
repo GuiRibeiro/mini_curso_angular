@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR" ng-app="aplicacao">
+<head>
+	<meta charset="UTF-8">
+	<title>Mini Curso SATI - UTFPR 2015</title>
+	<link rel="stylesheet" href="../css/bootstrap.min.css">
+	<link rel="stylesheet" href="../css/style.css">
+	<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+	<script src="../js/angular.js"></script>
+	<script src="controller.js"></script>
+
+</head>
+<body>
+	<div class="container" ng-controller="pessoaController">
+		<h3>Introdução</h3>
+            <h1 class="cover-heading">ANGULARJS</h1>
+            <p class="lead">para marujos de primeira viagem.</p>
+            <hr>
+        <dl >
+			<dt >Nome: </dt >
+			<dd >{{ nome }}</dd >
+			<dt >Email:</dt >
+			<dd >{{ email }}</dd >
+			<dt >Data Nascimento: </dt >
+			<dd >{{ dataNascimento }}</dd >
+			<dt >Saldo em Conta:</dt>
+			<dd >{{ saldo }}</dd>
+		</dl >
+
+	</div>
+</body>
+</html>

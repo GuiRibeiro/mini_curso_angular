@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR" ng-app="exemplo5">
+<head>
+	<meta charset="UTF-8">
+	<title>Mini Curso SATI - UTFPR 2015</title>
+	<link rel="stylesheet" href="../css/bootstrap.min.css">
+	<link rel="stylesheet" href="../css/style.css">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+	<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+	<script src="../js/angular.js"></script>
+	<script src="controller.js"></script>
+
+</head>
+<body>
+	<div class="container" ng-controller="pessoasController">
+		<h3>Introdução</h3>
+            <h1 class="cover-heading">ANGULARJS</h1>
+            <p class="lead">para marujos de primeira viagem.</p>
+            <hr>
+      <table class="col-md-12 table table-striped" >
+
+      <div class="row">
+            <div class="col-md-12">
+                 <form action="" class="search-form">
+                        <div class="form-group has-feedback">
+                        <label for="search" class="sr-only">Search</label>
+                        <input type="text" class="form-control" ng-model="search.nome" name="search" id="search" placeholder="Busca">
+                        <span class="glyphicon glyphicon-search form-control-feedback"></span>
+                  </div>
+                 </form>       
+            </div>
+      </div>
+
+      <fieldset>Lista Clientes</fieldset>
+       	<thead>
+       		<th>#</th>
+       		<th>
+                        Nome <span ng-click="order = '-nome'" class="label label-success"><i class="fa fa-chevron-down"></i></span>
+                             <span ng-click="order = 'nome'" class="label label-success"><i class="fa fa-chevron-up"></i></span>
+                  </th>
+       		<th>Email</th>
+       		<th>Aniversário</th>
+       		<th>Saldo</th>
+       	</thead>
+       	<tbody>
+       		<tr ng-repeat="pessoa in pessoas | filter:search | orderBy:order">
+       			<td style="vertical-align: middle;"><img ng-src="{{ pessoa.foto }}" alt="{{ pessoa.nome }}" class="img-circle"></td>
+       			<td style="vertical-align: middle;">{{ pessoa.nome }}</td>
+       			<td style="vertical-align: middle;">{{ pessoa.email }}</td>
+       			<td style="vertical-align: middle;">{{ pessoa.dataNascimento }}</td>
+       			<td style="vertical-align: middle;">{{ pessoa.saldo | monetario }}</td>
+       		</tr>
+       	</tbody>
+       </table>
+
+	</div>
+</body>
+</html>
