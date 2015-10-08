@@ -1,0 +1,58 @@
+    <!DOCTYPE html>
+    <html lang="pt-BR" ng-app="exemploWebService">
+    <head>
+    	<meta charset="UTF-8">
+    	<title>Mini Curso SATI - UTFPR 2015</title>
+    	<link rel="stylesheet" href="../css/bootstrap.min.css">
+    	<link rel="stylesheet" href="../css/style.css">
+          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    	<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+      <script src="../js/angular.js"></script>
+    	<script src="../js/angular-route.js"></script>
+    	<script src="controller.js"></script>
+
+    </head>
+    <body>
+    	<div class="container" ng-controller="PaisesController as paisesCtrl">
+
+    		<h3>Trabalhando com Web Services REST</h3>
+                <h1 class="cover-heading">ANGULARJS</h1>
+                <p class="lead">para marujos de primeira viagem.</p>
+                <hr>
+      
+      <div class="row">
+            <div class="col-md-12">
+                 <form action="" class="search-form">
+                        <div class="form-group has-feedback">
+                        <label for="search" class="sr-only">Busca</label>
+                        <input type="text" class="form-control" ng-model="search.name" name="search" id="search" placeholder="Busca" size="40">
+                        <span class="glyphicon glyphicon-search form-control-feedback"></span>
+                  </div>
+                 </form>       
+            </div>
+      </div>
+      <table class="table table-striped">
+      <fieldset>Lista de Países</fieldset>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Nome</th>
+            <th>Sigla Alpha 2</th>
+            <th>Sigla Alpha 3</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-init="index = $index + 1" ng-repeat="pais in paises | filter:search">
+            <td>{{ index }}</td>
+            <td>{{ pais.name }}</td>
+            <td>{{ pais.alpha2_code }}</td>
+            <td>{{ pais.alpha3_code }}</td>
+          </tr>
+        </tbody>
+      </table>
+        
+        
+          
+    	</div>
+    </body>
+    </html>

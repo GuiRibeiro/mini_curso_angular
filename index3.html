@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR" ng-app>
+<head>
+	<meta charset="UTF-8">
+	<title>Mini Curso SATI - UTFPR 2015</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/style.css">
+	<script src="js/angular.js"></script>
+
+</head>
+<body>
+	<div class="container">
+		<h3>Introdução</h3>
+        <h1 class="cover-heading">ANGULARJS</h1>
+        <p class="lead">para marujos de primeira viagem.</p>
+        <hr>
+
+		<div class="row">
+			<div class="col-md-12">
+				<form class="form-horizontal">
+				<fieldset>
+
+				<!-- Form Name -->
+				<legend>Mini Curso</legend>
+
+				<!-- Text input-->
+				<div class="form-group row">
+				  <label class="col-md-2 control-label" for="textinput">Nome</label>  
+				  <div class="col-md-4">
+				  <input id="textinput" name="textinput" ng-model="formModel.nome" placeholder="placeholder" class="form-control input-md" type="text">
+				 
+				  </div>
+				</div>
+				
+				<!-- Multiple Checkboxes (inline) -->
+				<div class="form-group row">
+				  <label class="col-md-2 control-label" for="checkboxes">Sexo</label>
+				  <div class="col-md-4">
+				    <label class="checkbox-inline" for="checkboxes-0">
+				      <input name="sexo" checked="checked" ng-model="sexo" id="checkboxes-0" value="m" type="radio">
+				      Masculino
+				    </label>
+				    <label class="checkbox-inline"  for="checkboxes-1">
+				      <input name="sexo" id="checkboxes-1" ng-model="sexo" value="f" type="radio">
+				      Feminino
+				    </label>
+				  </div>
+				</div>
+
+				<!-- Text input-->
+				<div ng-show="sexo == 'm'" class="form-group row">
+				  <label class="col-md-2 control-label"  for="alistamento">Alistamento</label>  
+				  <div class="col-md-4">
+				  <input id="alistamento" name="alistamento" ng-model="formModel.alistamento" placeholder="N Alistamento" class="form-control input-md" type="text">
+				    
+				  </div>
+				</div>
+				<div ng-hide="sexo == 'm'" class="form-group row">
+				  <label class="col-md-2 control-label"  for="alistamento">Documento de mulher</label>  
+				  <div class="col-md-4">
+				  <input id="alistamento" name="alistamento" ng-model="formModel.doc" placeholder="Doc mulher" class="form-control input-md" type="text">
+				    
+				  </div>
+				</div>
+				</fieldset>
+				</form>
+				<pre>{{ formModel | json }}</pre>
+			</div>
+		</div>
+        
+	</div>
+</body>
+</html>

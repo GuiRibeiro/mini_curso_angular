@@ -1,0 +1,22 @@
+
+                  <a href="#/" class="btn btn-danger"><i class="fa fa-arrow-left"></i>&nbspVoltar</a>
+                <hr>
+                <div class="col-md-12">
+                Detalhes:
+                <hr>
+                <dl>
+                    <dt>Nome:</dt>
+                    <dd>{{ selecionado.nome }}</dd> 
+                    <dt>Email:</dt>
+                    <dd> {{ selecionado.email }}</dd>
+                    <dt>Data Nascimento: </dt>
+                    <dd> {{ selecionado.dataNascimento }}</dd>
+                    <dt>Saldo:</dt>
+                    <dd>{{ selecionado.saldo | monetario }}</dd>
+                    <dt>Imagem:</dt> 
+                    <dd>
+                        <img ng-src="{{selecionado.foto }}" alt="{{selecionado.nome}}">
+                    </dd>
+                </dl>
+          </div>
+    
